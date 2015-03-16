@@ -17,3 +17,4 @@ Limitations:
 ------------
 * tested with git 2.2.1 so I cant guarantee you good results on lesser versions.
 * needs Ruby on your terminal!
+* Not sure about its compatiblity in Linux.. Does well in Mac.
