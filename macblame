@@ -6,8 +6,8 @@ def macblame(file_name)
 	lines = feed.split("\n")
 	commits = lines.length
 	lines.each do |line|
-		tokens = line.split(" ")
-		name = tokens[1][1..tokens[1].length]
+		tokens = line.split("(")
+		name = tokens[1].split(" ")[0]
 		if contributor[name].nil?
 			contributor[name] = 1
 		else
