@@ -19,7 +19,7 @@ def macblame(file_name)
 	end
 	print "for file #{file_name}.. \n"
 	sorted_hash.each do |i|
-		puts "Contributor: #{i[0]} with #{(i[1].to_f/commits.to_f)*100} % contribution with #{i[1]} commits"
+		puts "Contributor: #{i[0]} with #{(i[1].to_f/commits.to_f)*100} % contribution with #{i[1]} lines of code"
 	end
 	puts "* "*25
 end
