@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+def macblame(file_name)
+	contributor = {}
+	output = open("| git blame "+file_name)
+	feed = output.read()
+	lines = feed.split("\n")
+	commits = lines.length
+	lines.each do |line|
+		tokens = line.split(" ")
+		name = tokens[1][1..tokens[1].length]
+		if contributor[name].nil?
+			contributor[name] = 1
+		else
+			contributor[name] += 1
+		end
+	end
+	sorted_hash = contributor.sort.sort do |a,b|
+		b[1] <=> a[1]
+	end
+	print "for file #{file_name}.. \n"
+	sorted_hash.each do |i|
+		puts "Contributor: #{i[0]} with #{(i[1].to_f/commits.to_f)*100} % contribution"
+	end
+	puts "* "*25
+end
+ARGV.each do |name|
+	macblame(name)
+end
