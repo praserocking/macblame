@@ -23,6 +23,20 @@ def macblame(file_name)
 	end
 	puts "* "*25
 end
-ARGV.each do |name|
-	macblame(name)
+def print_general_message
+	print "macblame - A better alternative to 'git blame'\n\n"
+	puts "Usage:"
+	print "macblame <filename 1> <filename 2> ..... \n\n"
+	puts "Description:"
+	print "macblame shows stats about the files tracked by git. It uses the output of 'git blame' and summarize it in a cleaner and intuitive format."
+	puts "\n\n Credits:"
+	print "Prasanna Sundar  -  prassi  -  praserocking@gmail.com"
+end
+
+if ARGV.length == 0
+	print_general_message
+else
+	ARGV.each do |name|
+		macblame(name)
+	end
 end
