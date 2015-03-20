@@ -1,20 +1,14 @@
 # macblame
 ==========
-A better git blame for use at your mac terminals...
+A better git blame to use in your Terminal.app
 This tool is used along with git to get a better version of "git blame <filename>".. It will give you the percentage of contribution by individual users, so that it will be easier for you to blame the right person.. ;)
-This Idea was conceived by Vignesh Jeyavel of freshdesk and its a cool idea!
+This idea was conceived by Vignesh Jeyavel of Freshdesk and it's a cool idea!
+Quick Install:
+```
+cd; curl -#L https://github.com/praserocking/macblame/tarball/master | tar -xzv --strip-components 1 --exclude='README.md' && ./install.sh
+```
 Usage:
 ```
-                ./install.sh
+macblame <file1> <file2> .....
 ```
-to install macblame on your terminal and 
-```
-                macblame <file1> <file2> .....
-```
-to use it!
-
-Limitations:
-------------
-* tested with git 2.2.1 so I cant guarantee you good results on lesser versions.
-* needs Ruby on your terminal!
-* Not sure about its compatiblity in Linux.. Does well in Mac.
+Enjoy!
